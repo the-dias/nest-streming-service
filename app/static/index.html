@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/style.css" />
+</head>
+
+<body>
+    <main class="main">
+        <div class="main__input">
+            <!-- <form action="/order?id=1"> -->
+            <input id="id_input" type="text" placeholder="Write id order" />
+            <button id="btn_id_input">Get</button>
+            <!-- </form> -->
+        </div>
+        <!-- <div style="border: 1px solid white; width: 100%;"></div> -->
+        <div class="display_order">
+            {{if .ID }}
+            <p id="display_order_id">Order ID: {{.ID}}</p>
+            {{else}}
+            <p>Order ID not specified</p>
+            {{end}}
+
+            {{if .Order }}
+            <!-- <pre> -->
+            Order Order:
+            <div class="orders">
+                <pre
+                    style="display: none; margin:0; padding: 0px; overflow: auto; white-space: pre-wrap; background-color: rgb(255, 255, 255); color: black; height: 400px;">
+            <div id="jsonData">
+                {{.Order}}
+            </div>
+            
+      
+                
+            </pre>
+                <pre
+                    style="overflow: auto; white-space: pre-wrap; background-color: rgb(255, 255, 255); color: black; height: 400px;">
+                <div id="showDataJson">
+
+                </div>
+            </pre>
+            </div>
+            <!-- </pre> -->
+            {{else}}
+            <p>No order data available</p>
+            {{end}}
+        </div>
+    </main>
+
+    <script src="/static/script.js"></script>
+</body>
+
+</html>
